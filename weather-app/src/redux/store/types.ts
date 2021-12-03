@@ -77,6 +77,11 @@ export interface WeatherData {
     }
     
     export type WeatherActionTypes = GetWeatherAction | SetLoadingAction | SetErrorAction;
+    
+    export interface  AlertAction {
+        type: typeof SET_ALERT;
+        payload: string;
+    }
   
 
 // {"coord": { "lon": 139,"lat": 35},
