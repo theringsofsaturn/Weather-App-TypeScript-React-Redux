@@ -66,6 +66,10 @@ export interface WeatherData {
         type: typeof GET_WEATHER;
         payload: WeatherData;
     }
+
+    export interface SetLoadingAction {
+        type: typeof SET_LOADING;
+    }
   
 
 // {"coord": { "lon": 139,"lat": 35},
