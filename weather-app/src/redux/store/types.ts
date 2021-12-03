@@ -70,6 +70,11 @@ export interface WeatherData {
     export interface SetLoadingAction {
         type: typeof SET_LOADING;
     }
+
+    export interface SetErrorAction {
+        type: typeof SET_ERROR;
+        payload: string;
+    }
   
 
 // {"coord": { "lon": 139,"lat": 35},
