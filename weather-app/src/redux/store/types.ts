@@ -82,6 +82,10 @@ export interface WeatherData {
         type: typeof SET_ALERT;
         payload: string;
     }
+
+    export interface AlertState { 
+        message: string;
+    }
   
 
 // {"coord": { "lon": 139,"lat": 35},
