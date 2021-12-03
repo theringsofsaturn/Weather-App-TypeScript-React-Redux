@@ -1,17 +1,52 @@
-export const GET_WEATHER = 'GET_WEATHER';
-export const SET_LOADING = 'SET_LOADING';
-export const SET_ERROR = 'SET_ERROR';
-export const SET_ALERT = 'SET_ALERT';
+export const GET_WEATHER = "GET_WEATHER";
+export const SET_LOADING = "SET_LOADING";
+export const SET_ERROR = "SET_ERROR";
+export const SET_ALERT = "SET_ALERT";
 
 export interface Weather {
-    description: string;
-    icon: string;
-    id: number;
-    main: string;
+  id: number;
+  main: string;
+  description: string;
+  icon: string;
+}
+
+export interface WeatherData {
+    coord: {
+        lon: number;
+        lat: number;
+      };
+      base: string;
+      main: {
+        feels_like: number;
+        humidity: number;
+        pressure: number;
+        temp: number;
+        temp_max: number;
+        temp_min: number;
+      };
+      wind: {
+        speed: number;
+        deg: number;
+      };
+      clouds: {
+        all: number;
+      };
+      dt: number;
+      sys: {
+        country: string;
+        id: number;
+        sunrise: number;
+        sunset: number;
+        type: number;
+      };
+      timezone: number;
+      id: number;
+      name: string;
+      cod: number;
+      visibility: number;
+      weather: Weather[];
   }
 
-
-                             
 
 // {"coord": { "lon": 139,"lat": 35},
 // "weather": [
@@ -52,6 +87,3 @@ export interface Weather {
 // "name": "Shuzenji",
 // "cod": 200
 // }
-                        
-
-                      
