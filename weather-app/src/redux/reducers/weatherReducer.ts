@@ -6,6 +6,7 @@ import {
   SET_ERROR,
 } from "../store/types";
 
+// Initial State of Weather
 const initialState: WeatherState = {
   data: null,
   loading: false,
