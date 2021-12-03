@@ -75,6 +75,8 @@ export interface WeatherData {
         type: typeof SET_ERROR;
         payload: string;
     }
+    
+    export type WeatherActionTypes = GetWeatherAction | SetLoadingAction | SetErrorAction;
   
 
 // {"coord": { "lon": 139,"lat": 35},
