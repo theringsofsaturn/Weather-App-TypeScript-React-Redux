@@ -47,6 +47,11 @@ export interface WeatherData {
       weather: Weather[];
   }
 
+  export interface WeatherError {
+    cod: string;
+    message: string;
+  }
+
 
 // {"coord": { "lon": 139,"lat": 35},
 // "weather": [
