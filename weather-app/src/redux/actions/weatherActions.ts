@@ -14,7 +14,7 @@ export const getWeather =
   async (dispatch) => {
     try {
       const res = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_API_KEY}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=972c3e9d41fd20885faecb49876e8ba6`
       );
 
       if (!res.ok) {

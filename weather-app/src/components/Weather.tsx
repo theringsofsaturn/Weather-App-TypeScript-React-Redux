@@ -1,13 +1,15 @@
 import React, { FC } from 'react';
-import { WeatherData } from '../store/types';
+import { WeatherData } from '../redux/store/types';
 
 interface WeatherProps {
   data: WeatherData;
 }
 
 const Weather: FC<WeatherProps> = ({ data }) => {
-  const fahrenheit = (data.main.temp * 1.8 - 459.67).toFixed(2);
-  const celsius = (data.main.temp - 273.15).toFixed(2);
+;
+  const temp = (data.main.temp - 273.15).toFixed(2);
+  const temp_max = (data.main.temp_max - 273.15).toFixed(2);
+  const temp_min = (data.main.temp_min - 273.15).toFixed(2);
 
   return(
     <section className="section">
@@ -25,8 +27,11 @@ const Weather: FC<WeatherProps> = ({ data }) => {
               <p className="heading">temp</p>
               <div className="title">
                 <p className="mb-2">{data.main.temp}K</p>
-                <p className="mb-2">{fahrenheit}<sup>&#8457;</sup></p>
-                <p>{celsius}<sup>&#8451;</sup></p>
+                <p>{temp}<sup>&#8451;</sup></p>
+                <p className="mb-2">{data.main.temp_max}K</p>
+                <p>{temp_max}<sup>&#8451;</sup></p>
+                <p className="mb-2">{data.main.temp_min}K</p>
+                <p>{temp_max}<sup>&#8451;</sup></p>
               </div>
             </div>
           </div>

@@ -10,10 +10,19 @@ import Alert from './components/Alert';
 
 
 const App: FC = () => {
+  const dispatch = useDispatch();
+  const weatherData = useSelector((state: RootState) => state.weather.data);
+  const error = useSelector((state: RootState) => state.weather.error);
+  const alert = useSelector((state: RootState) => state.alert.message);
+  const loading = useSelector((state: RootState) => state.weather.loading);
   return (
-    <div className="App">
-     
-    </div>
+    <div className="has-text-centered">
+    <Search title="Search for the weather in your city 🌡" />
+    {loading ? <h2 className="is-size-3 py-2">Loading...</h2> : weatherData && <Weather data={weatherData} />}
+
+    {alert && <Alert message={alert} onClose={() => dispatch(setAlert(''))} />}
+    {error && <Alert message={error} onClose={() => dispatch(setError("Something went wrong"))} />}
+  </div>
   );
 }
 
